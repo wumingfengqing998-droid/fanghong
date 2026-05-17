@@ -7,7 +7,8 @@ var urlMatch = search.match(/[?&]url=(.+)/);
 var targetUrl = urlMatch ? urlMatch[1] : null;
 
 function isWeChat() {
-  return /MicroMessenger/i.test(navigator.userAgent);
+  return /MicroMessenger/i.test(navigator.userAgent) || 
+         /AlipayClient/i.test(navigator.userAgent);
 }
 
 if (targetUrl && !isWeChat()) {
