@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <script>
-  var targetUrl = new URLSearchParams(window.location.search).get('url');
-  
-  function isWeChat() {
-    return /MicroMessenger/i.test(navigator.userAgent);
-  }
-  
-  if (targetUrl && !isWeChat()) {
-    // 普通浏览器直接跳转
-    window.location.replace(decodeURIComponent(targetUrl));
-  }
-  // 微信内则显示引导页（不跳转）
+<script>
+var search = window.location.search;
+var urlMatch = search.match(/[?&]url=(.+?)(&|$)/);
+var targetUrl = urlMatch ? urlMatch[1] : null;
+
+function isWeChat() {
+  return /MicroMessenger/i.test(navigator.userAgent);
+}
+
+if (targetUrl && !isWeChat()) {
+  window.location.replace(decodeURIComponent(targetUrl));
+}
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
