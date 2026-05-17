@@ -3,7 +3,7 @@
 <head>
 <script>
 var search = window.location.search;
-var urlMatch = search.match(/[?&]url=(.+?)(&|$)/);
+var urlMatch = search.match(/[?&]url=(.+)/);
 var targetUrl = urlMatch ? urlMatch[1] : null;
 
 function isWeChat() {
