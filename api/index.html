@@ -1,42 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
-    <title>中转</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>客服中转</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'PingFang SC',sans-serif;background:#0a0a0f;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:48px 32px;width:100%;max-width:380px;text-align:center}
+.icon{width:72px;height:72px;margin:0 auto 20px;background:linear-gradient(135deg,#007aff,#00c6ff);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 8px 32px rgba(0,122,255,0.4)}
+.status{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:20px}
+.dot{width:8px;height:8px;border-radius:50%;background:#34d058;box-shadow:0 0 6px #34d058}
+.status span{color:rgba(255,255,255,0.4);font-size:12px}
+h1{font-size:22px;font-weight:700;margin-bottom:8px}
+.sub{font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:32px;line-height:1.7}
+.notice{background:rgba(0,122,255,0.1);border:1px solid rgba(0,122,255,0.25);border-radius:12px;padding:14px 16px;font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:28px;text-align:left}
+.notice b{color:#00c6ff}
+.btn{display:block;padding:16px;background:linear-gradient(135deg,#007aff,#00c6ff);border-radius:14px;color:#fff;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 8px 24px rgba(0,122,255,0.4)}
+.tip{margin-top:20px;font-size:12px;color:rgba(255,255,255,0.25)}
+</style>
 </head>
 <body>
-    <div id="tips" style="font-size:25px;text-align: center;line-height: 50px;"></div>
-    <script>
-    var url = document.location.toString();
-    var urlParmStr = url.slice(url.indexOf('=')+1);
-    var ua = navigator.userAgent.toLowerCase();
-    var isQQ = ua.indexOf('qq') != -1;
-    var isWeixin = ua.indexOf('micromessenger') != -1;
-    var isAndroid = ua.indexOf('android') != -1;
-    var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
-
-    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />不得不看的内容，复制到浏览器打开吧：<b style=\"color:red\">www.yiove.com</b>"
-
-    // 判断是不是在微信客户端打开
-    if(isWeixin || isQQ) {
-    // 判断是在Android的微信客户端还是Ios的微信客户端
-    if (isAndroid) {
-    document.getElementById("tips").innerHTML=notice_openBrowser;
-    }else if (isIos) {
-    document.getElementById("tips").innerHTML=notice_openBrowser;
-    }else{
-    document.getElementById("tips").innerHTML=notice_openBrowser;
-    }
-    } else {
-    // 不是微信客户端，直接可以访问链接
-    if (urlParmStr == url){
-        urlParmStr = "https://www.yiove.com";
-    }
-    console.log(urlParmStr);
-    location.href=urlParmStr;
-    }
-</script>
-    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"K8YSQIj3WDtj9gG6",ck:"K8YSQIj3WDtj9gG6"})</script>
+<div class="card">
+  <div class="icon">💬</div>
+  <div class="status"><div class="dot"></div><span>客服在线</span></div>
+  <h1>客服订单处理中转</h1>
+  <div class="sub">您的专属客服正在等待为您服务<br>请点击下方按钮进入咨询</div>
+  <div class="notice">📌 <b>温馨提示：</b>请点击右上角菜单，选择「在浏览器中打开」以获得最佳体验。</div>
+  <a class="btn" href="https://33441y.top/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=7&groupid=3&special=8">立即联系客服 →</a>
+  <div class="tip">安全跳转 · 数据加密保护</div>
+</div>
 </body>
 </html>
